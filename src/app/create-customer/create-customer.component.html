@@ -1,0 +1,43 @@
+<h3>Create customer form</h3>
+<div [hidden]="submitted" style="width: 300px">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="firstname">Firs Name</label><input type="text"
+        class="form-control" id="firstname" required
+        [(ngModel)]="customer.firstName" name="firstname">
+    </div>
+    <div class="form-group">
+      <label for="lastname">Last Name</label><input type="text"
+        class="form-control" id="lastname" required
+        [(ngModel)]="customer.lastName" name="lastName">
+    </div>
+    <div class="form-group">
+      <label for="carne">Carné</label><input type="text"
+        class="form-control" id="carne" required
+        [(ngModel)]="customer.carne" name="carne">
+    </div>
+    <div class="form-group">
+      <label for="username">User Name</label><input type="text"
+        class="form-control" id="username" required
+        [(ngModel)]="customer.userName" name="userName">
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label><input type="password"
+        class="form-control" id="password" required
+        [(ngModel)]="customer.password" name="password">
+    </div>
+
+    <div class="btn-group">
+			<button class="btn btn-primary" (click)="goBack()">Back</button>
+			<button type="submit" class="btn btn-success">Submit</button>
+		</div>
+	</form>
+</div>
+
+<div [hidden]="!submitted">
+	<div class="btn-group ">
+		<h4>You submitted successfully!</h4>
+		<button class="btn btn-primary" (click)="goBack()">Back</button>
+		<button class="btn btn-success" (click)="newCustomer()">Add</button>
+	</div>
+</div>
