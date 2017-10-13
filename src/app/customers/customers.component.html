@@ -5,3 +5,37 @@
   </li>
 </ul>
 <customer-detail [customer]="selectedCustomer"></customer-detail>
+<div class="container">
+    <div class="row col-md-6 col-md-offset-2 custyle">
+    <table class="table table-striped custab">
+    <thead>
+    <a href="#" class="btn btn-primary btn-xs pull-right"><b>+</b> Add new categories</a>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Carne</th>
+            <th>
+              Nombre de usuario
+            </th>
+            <th class="text-center">Acciones</th>
+        </tr>
+    </thead>
+            <tr *ngFor="let customer of customers"
+              [class.selected]="customer == selectedCustomer" (click)="onSelect(customer)">
+              <td>{{customer.id}}</td>
+              <td>
+                {{customer.firstName}} {{customer.lastName}}
+              </td>
+              <td>
+                {{customer.carne}}
+              </td>
+              <td>
+                {{customer.username}}
+              </td>
+              <td>
+
+              </td>
+            </tr>
+    </table>
+    </div>
+</div>
